@@ -15,8 +15,8 @@ if(args.values.h) {
 } else {
   let source = args.positionals[0];
   let destination = args.positionals[1];
-  console.log(`source path: ${source}`);
-  console.log(`destination path: ${destination}`);
+  // console.log(`source path: "${source}"`);
+  // console.log(`destination path: "${destination}"`);
   if(source && destination){
     console.log(await copy('testIn', 'testOut'));
   }
