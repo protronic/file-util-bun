@@ -17,7 +17,7 @@ let args = parseArgs({
 if(args.values.h || args.values.help) {
   console.log(HELP_MESSAGE);
 } else if (args.values.v || args.values.version){
-  console.log(`  Build Version: ${getVersion()}\n  Commit Hash: ${getGitCommitHash()}  Build Time: ${getTime()}`);
+  // console.log(`  Build Version: ${getVersion()}\n  Commit Hash: ${getGitCommitHash()}  Build Time: ${getTime()}`);
 } else {
   let source = args.positionals[0];
   let destination = args.positionals[1];
@@ -25,6 +25,8 @@ if(args.values.h || args.values.help) {
   // console.log(`destination path: "${destination}"`);
   if(source && destination){
     console.log(await copy('testIn', 'testOut'));
+  } else {
+    console.error(`both a source and a destination must be specified.`);
   }
 }
 

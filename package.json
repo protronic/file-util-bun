@@ -6,6 +6,9 @@
     "bin": {
         "cpjs": "index.ts"
     },
+    "scripts": {
+        "build": "bun build ./index.ts --outfile dist/app --compile"
+    },
     "devDependencies": {
         "@types/bun": "latest",
         "bun": "^1.1.18"
