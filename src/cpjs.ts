@@ -2,7 +2,7 @@ import { getGitCommitHash, getTime, getVersion } from "./macro.ts" with {type: "
 import { copy } from "./copy.ts";
 import { parseArgs } from "util";
 
-const HELP_MESSAGE = "usage: jscopy [-h|-help|-v|-version] <source> <destination>";
+const HELP_MESSAGE = "usage: cpjs [-h|-help|-v|-version] <source> <destination>";
 
 let args = parseArgs({
   options: { 
@@ -21,8 +21,6 @@ if(args.values.h || args.values.help) {
 } else {
   let source = args.positionals[0];
   let destination = args.positionals[1];
-  // console.log(`source path: "${source}"`);
-  // console.log(`destination path: "${destination}"`);
   if(source && destination){
     console.log(await copy('testIn', 'testOut'));
   } else {

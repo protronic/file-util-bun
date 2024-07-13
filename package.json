@@ -4,12 +4,13 @@
     "type": "module",
     "version": "0.0.1",
     "bin": {
-        "cpjs": "index.ts"
+        "cpjs": "dist/cpjs.js"
     },
     "scripts": {
-        "build_exe": "bun build ./index.ts --outfile dist/cpjs --compile",
-        "build": "bun build --outdir dist --target bun index.ts",
-        "watch": "bun build --outdir dist --target bun index.ts --watch"
+        "build_cp_exe": "bun build ./src/cpjs.ts --outfile dist/cpjs --compile",
+        "build": "bun build --outdir dist --target bun src/cpjs.ts src/scpjs.ts",
+        "build_all": "npm run build_cp_exe; npm run build;",
+        "watch": "bun build --outdir dist --target bun src/cpjs.ts --watch"
     },
     "devDependencies": {
         "@types/bun": "latest",
@@ -17,5 +18,9 @@
     },
     "peerDependencies": {
         "typescript": "^5.0.0"
+    },
+    "dependencies": {
+        "node-scp": "^0.0.23",
+        "read": "^3.0.1"
     }
 }

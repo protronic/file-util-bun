@@ -1,7 +1,3 @@
-// console.log("Hello via Bun!");
-
-// console.log(Bun.file("index.ts"));
-
 import { readdir, stat, mkdir, exists } from "node:fs/promises";
 import { Stats } from "node:fs";
 
@@ -34,7 +30,7 @@ async function copyFile(source: string, destination: string){
   return await Bun.write(await resolveDestination(source, destination), Bun.file(source));
 }
 
-async function copy(source: string, destination: string){
+export async function copy(source: string, destination: string){
   if(!(await exists(source))){
     throw new FileNotFoundError(`File "${source}" does not exist.`);
   }
@@ -63,21 +59,3 @@ async function copy(source: string, destination: string){
     return result;
   }
 }
-
-
-// let file = Bun.file('.');
-
-// const files = await readdir(file.name!);
-
-// console.log((await Promise.all(files.map((file) => 
-//   (stat(file))
-// ))).map((values, index) => ({name: files[index], isDir: values.isDirectory()})));
-
-// console.log(files);
-
-// console.log({file: file, name: file.name, test: file});
-
-
-export {copy};
-
-// console.log(await readdir('.'))
