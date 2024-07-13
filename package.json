@@ -7,7 +7,8 @@
         "cpjs": "index.ts"
     },
     "scripts": {
-        "build": "bun build ./index.ts --outfile dist/app --compile"
+        "build_exe": "bun build ./index.ts --outfile dist/cpjs --compile",
+        "build": "bun build --outdir dist --target bun index.ts"
     },
     "devDependencies": {
         "@types/bun": "latest",
