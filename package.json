@@ -8,7 +8,8 @@
     },
     "scripts": {
         "build_exe": "bun build ./index.ts --outfile dist/cpjs --compile",
-        "build": "bun build --outdir dist --target bun index.ts"
+        "build": "bun build --outdir dist --target bun index.ts",
+        "watch": "bun build --outdir dist --target bun index.ts --watch"
     },
     "devDependencies": {
         "@types/bun": "latest",
