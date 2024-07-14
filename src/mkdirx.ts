@@ -2,7 +2,10 @@ import { getGitCommitHash, getTime, getVersion } from "./macro.ts" with {type: "
 import { makeDir } from "./mkdir.ts";
 import { parseArgs } from "util";
 
-const HELP_MESSAGE = "usage: rmjs [-h|-help|-v|-version|-r|-recursive] <target>";
+const HELP_MESSAGE = `
+usage: mkdirx [-h(elp)|-v(ersion)] <target 1> <target 2> ... <target n>
+  creates a directory/directories at target location. Targets parent directories will be created if necessary.
+`;
 
 let args = parseArgs({
   options: { 
@@ -17,10 +20,10 @@ if(args.values.help) {
 } else if (args.values.version){
   console.log(`  Build Version: ${getVersion()}\n  Commit Hash: ${getGitCommitHash()}  Build Time: ${getTime()}`);
 } else {
-  let target = args.positionals[0];
-  if(!target) {
+  let targets = args.positionals;
+  if(targets.length == 0) {
     console.error("no target was specified.");
   } else {
-    await makeDir(target);
+    await Promise.all(targets.map(makeDir));
   }
 }
