@@ -6,7 +6,9 @@
     "bin": {
         "cpx": "dist/cpx.js",
         "scpx": "dist/scpx.js",
-        "rmx": "dist/rmx.js"
+        "rmx": "dist/rmx.js",
+        "mkdirx": "dist/mkdirx.js",
+        "touch": "dist/touchx.js"
     },
     "scripts": {
         "postinstall": "bun run build_all",
