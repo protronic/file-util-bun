@@ -21,20 +21,25 @@
         "build_exe_linux:scp": "bun build ./src/scpx.ts --target=bun-linux-x64 --outfile dist/scpx --compile",
         "build_node:scp": "echo 'scpx is not supported to be build with node as target.'",
 
-        "build:rm": "bun build --outdir dist --target bun src/rm.ts",
+        "build:rm": "bun build --outdir dist --target bun src/rmx.ts",
         "build_exe:rm": "bun build ./src/rmx.ts --outfile dist/rmx --compile",
         "build_exe_linux:rm": "bun build ./src/rmx.ts --target=bun-linux-x64 --outfile dist/rmx --compile",
         "build_node:rm": "bun build --outdir dist --target node src/rmx.ts",
 
-        "build:mkdir": "bun build --outdir dist --target bun src/mkdir.ts",
+        "build:mkdir": "bun build --outdir dist --target bun src/mkdirx.ts",
         "build_exe:mkdir": "bun build ./src/mkdirx.ts --outfile dist/mkdirx --compile",
         "build_exe_linux:mkdir": "bun build ./src/mkdirx.ts --target=bun-linux-x64 --outfile dist/mkdirx --compile",
         "build_node:mkdir": "bun build --outdir dist --target node src/mkdirx.ts",
 
-        "build_exe": "bun run build_exe:cp; bun run build_exe:scp; bun run build_exe:rm; bun run build_exe:mkdir",
-        "build_exe_linux": "bun run build_exe_linux:cp; bun run build_exe_linux:scp; bun run build_exe_linux:rm; bun run build_exe_linux:mkdir",
-        "build_node": "bun build --outdir dist --target node src/cpx.ts src/rmx.ts src/mkdirx.ts; bun run build_node:scp",
-        "build": "bun build --outdir dist --target bun src/cpx.ts src/scpx.ts src/rmx.ts src/mkdirx.ts",
+        "build:touch": "bun build --outdir dist --target bun src/touchx.ts",
+        "build_exe:touch": "bun build ./src/touchx.ts --outfile dist/touchx --compile",
+        "build_exe_linux:touch": "bun build ./src/touchx.ts --target=bun-linux-x64 --outfile dist/touchx --compile",
+        "build_node:touch": "bun build --outdir dist --target node src/touchx.ts",
+
+        "build_exe": "bun run build_exe:cp; bun run build_exe:scp; bun run build_exe:rm; bun run build_exe:mkdir; bun run build_exe:touch",
+        "build_exe_linux": "bun run build_exe_linux:cp; bun run build_exe_linux:scp; bun run build_exe_linux:rm; bun run build_exe_linux:mkdir; bun run build_exe_linux:touch",
+        "build_node": "bun build --outdir dist --target node src/cpx.ts src/rmx.ts src/mkdirx.ts src/touchx.ts; bun run build_node:scp",
+        "build": "bun build --outdir dist --target bun src/cpx.ts src/scpx.ts src/rmx.ts src/mkdirx.ts src/touchx.ts",
         "build_all": "bun run build_exe; bun run build_exe_linux; bun run build",
 
         "watch": "bun build --outdir dist --target bun src/cpx.ts src/scpx.ts src/rmx.ts --watch"
