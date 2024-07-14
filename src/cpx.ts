@@ -1,15 +1,7 @@
-import { getArgs, handleDefaultArgs } from "./cliTemplate.ts";
+import { getArgs, handleDefaultArgs } from "./cli-template.ts";
 import { copy } from "./copy.ts";
 
 const HELP_MESSAGE = "usage: cpx [-h(elp)|-v(ersion)] <source> <destination>";
-
-// let args = parseArgs({
-//   options: { 
-//     help: {type: "boolean", short: "h"},
-//     version: {type: "boolean", short: "v"}
-//   },
-//   allowPositionals: true
-// }); 
 
 let args = getArgs(true);
 
