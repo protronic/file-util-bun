@@ -6,17 +6,15 @@ const HELP_MESSAGE = "usage: cpx [-h(elp)|-v(ersion)] <source> <destination>";
 
 let args = parseArgs({
   options: { 
-    h: {type: "boolean"},
-    help: {type: "boolean"},
-    v: {type: "boolean"},
-    version: {type: "boolean"}
+    help: {type: "boolean", short: "h"},
+    version: {type: "boolean", short: "v"}
   },
   allowPositionals: true
 }); 
 
-if(args.values.h || args.values.help) {
+if(args.values.help) {
   console.log(HELP_MESSAGE);
-} else if (args.values.v || args.values.version){
+} else if (args.values.version){
   console.log(`  Build Version: ${getVersion()}\n  Commit Hash: ${getGitCommitHash()}  Build Time: ${getTime()}`);
 } else {
   let source = args.positionals[0];
