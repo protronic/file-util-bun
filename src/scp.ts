@@ -8,8 +8,6 @@ export interface Security{
   passphrase?: string
 }
 
-class ScpError extends Error {}
-
 export async function scp(source: string, destination: string, host: string, port: number, username: string, auth: Security){
   let config: any = {
     host: host,
