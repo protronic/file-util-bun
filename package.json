@@ -4,11 +4,13 @@
     "type": "module",
     "version": "0.0.1",
     "bin": {
-        "cpjs": "dist/cpjs.js"
+        "cpjs": "dist/cpjs.js",
+        "scpjs": "dist/scpjs.js",
+        "rmjs": "dist/rmjs.js"
     },
     "scripts": {
         "build_cp_exe": "bun build ./src/cpjs.ts --outfile dist/cpjs --compile",
-        "build": "bun build --outdir dist --target bun src/cpjs.ts src/scpjs.ts",
+        "build": "bun build --outdir dist --target bun src/cpjs.ts src/scpjs.ts src/rmjs.ts",
         "build_all": "npm run build_cp_exe; npm run build;",
         "watch": "bun build --outdir dist --target bun src/cpjs.ts --watch"
     },
