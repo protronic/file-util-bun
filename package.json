@@ -4,35 +4,35 @@
     "type": "module",
     "version": "0.0.1",
     "bin": {
-        "cpjs": "dist/cpjs.js",
-        "scpjs": "dist/scpjs.js",
-        "rmjs": "dist/rmjs.js"
+        "cpx": "dist/cpx.js",
+        "scpx": "dist/scpx.js",
+        "rmx": "dist/rmx.js"
     },
     "scripts": {
         "postinstall": "bun run build_all",
 
-        "build:cp": "bun build --outdir dist --target bun src/cpjs.ts",
-        "build_exe:cp": "bun build ./src/cpjs.ts --outfile dist/cpjs --compile",
-        "build_exe_linux:cp": "bun build ./src/cpjs.ts --target=bun-linux-x64 --outfile dist/cpjs --compile",
-        "build_node:cp": "bun build --outdir dist --target node src/cpjs.ts",
+        "build:cp": "bun build --outdir dist --target bun src/cpx.ts",
+        "build_exe:cp": "bun build ./src/cpx.ts --outfile dist/cpx --compile",
+        "build_exe_linux:cp": "bun build ./src/cpx.ts --target=bun-linux-x64 --outfile dist/cpx --compile",
+        "build_node:cp": "bun build --outdir dist --target node src/cpx.ts",
 
-        "build:scp": "bun build --outdir dist --target bun src/scpjs.ts",
-        "build_exe:scp": "bun build ./src/scpjs.ts --outfile dist/scpjs --compile",
-        "build_exe_linux:scp": "bun build ./src/scpjs.ts --target=bun-linux-x64 --outfile dist/scpjs --compile",
-        "build_node:scp": "echo 'scpjs is not supported to be build with node as target.'",
+        "build:scp": "bun build --outdir dist --target bun src/scpx.ts",
+        "build_exe:scp": "bun build ./src/scpx.ts --outfile dist/scpx --compile",
+        "build_exe_linux:scp": "bun build ./src/scpx.ts --target=bun-linux-x64 --outfile dist/scpx --compile",
+        "build_node:scp": "echo 'scpx is not supported to be build with node as target.'",
 
         "build:rm": "bun build --outdir dist --target bun src/rm.ts",
-        "build_exe:rm": "bun build ./src/rmjs.ts --outfile dist/rmjs --compile",
-        "build_exe_linux:rm": "bun build ./src/rmjs.ts --target=bun-linux-x64 --outfile dist/rmjs --compile",
-        "build_node:rm": "bun build --outdir dist --target node src/rmjs.ts",
+        "build_exe:rm": "bun build ./src/rmx.ts --outfile dist/rmx --compile",
+        "build_exe_linux:rm": "bun build ./src/rmx.ts --target=bun-linux-x64 --outfile dist/rmx --compile",
+        "build_node:rm": "bun build --outdir dist --target node src/rmx.ts",
 
         "build_exe": "bun run build_exe:cp; bun run build_exe:scp; bun run build_exe:rm",
         "build_exe_linux": "bun run build_exe_linux:cp; bun run build_exe_linux:scp; bun run build_exe_linux:rm",
-        "build_node": "bun build --outdir dist --target node src/cpjs.ts src/rmjs.ts; bun run build_node:scp",
-        "build": "bun build --outdir dist --target bun src/cpjs.ts src/scpjs.ts src/rmjs.ts",
+        "build_node": "bun build --outdir dist --target node src/cpx.ts src/rmx.ts; bun run build_node:scp",
+        "build": "bun build --outdir dist --target bun src/cpx.ts src/scpx.ts src/rmx.ts",
         "build_all": "bun run build_exe; bun run build_exe_linux; bun run build",
 
-        "watch": "bun build --outdir dist --target bun src/cpjs.ts src/scpjs.ts src/rmjs.ts --watch"
+        "watch": "bun build --outdir dist --target bun src/cpx.ts src/scpx.ts src/rmx.ts --watch"
     },
     "devDependencies": {
         "@types/bun": "latest",
