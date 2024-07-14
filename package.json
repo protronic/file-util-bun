@@ -10,8 +10,14 @@
     },
     "scripts": {
         "build_cp_exe": "bun build ./src/cpjs.ts --outfile dist/cpjs --compile",
+        "build_cp_exe_linux": "bun build ./src/cpjs.ts --target=bun-linux-x64 --outfile dist/cpjs --compile",
+        "build_scp_exe": "bun build ./src/scpjs.ts --outfile dist/scpjs --compile",
+        "build_scp_exe_linux": "bun build ./src/scpjs.ts --target=bun-linux-x64 --outfile dist/scpjs --compile",
+        "build_rm_exe": "bun build ./src/rmjs.ts --outfile dist/rmjs --compile",
+        "build_rm_exe_linux": "bun build ./src/rmjs.ts --target=bun-linux-x64 --outfile dist/rmjs --compile",
+        "build_exe": "bun run build_cp_exe; bun run build_scp_exe; bun run build_rm_exe",
         "build": "bun build --outdir dist --target bun src/cpjs.ts src/scpjs.ts src/rmjs.ts",
-        "build_all": "npm run build_cp_exe; npm run build;",
+        "build_all": "npm run build_exe; npm run build;",
         "watch": "bun build --outdir dist --target bun src/cpjs.ts --watch"
     },
     "devDependencies": {
