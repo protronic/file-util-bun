@@ -5,7 +5,7 @@ import { homedir } from "os";
 import path from "path";
 import { read } from "read";
 
-const HELP_MESSAGE = `usage: scpjs [-h|-help|-v|-version|-k <path/to/privatekey>|-p <port>|-a|-s] <source> <username>@<host>:<destination>
+const HELP_MESSAGE = `usage: scpx [-h(elp)|-v(ersion)|-k <path/to/privatekey>|-p <port>|-a|-s] <source> <username>@<host>:<destination>
   -help |
   -h -- shows this message
   -version |

@@ -2,7 +2,7 @@ import { getGitCommitHash, getTime, getVersion } from "./macro.ts" with {type: "
 import { copy } from "./copy.ts";
 import { parseArgs } from "util";
 
-const HELP_MESSAGE = "usage: cpjs [-h|-help|-v|-version] <source> <destination>";
+const HELP_MESSAGE = "usage: cpx [-h(elp)|-v(ersion)] <source> <destination>";
 
 let args = parseArgs({
   options: { 
