@@ -26,7 +26,6 @@ let args = getArgs(true, {
 
 handleDefaultArgs(args, HELP_MESSAGE);
 
-
 let source = args.positionals[0];
 let [username, hostDestination] = args.positionals[1].split('@');
 let [host, destination] = hostDestination.split(':');

@@ -36,9 +36,9 @@ export async function scp(source: string, destination: string, host: string, por
     
     try {    
       if((await stat(source)).isDirectory()){
-        await client.uploadDir(source, destination);
+        return client.uploadDir(source, destination);
       } else {
-        await client.uploadFile(source, destination);
+        return client.uploadFile(source, destination);
       }
     } catch (err) {
       console.error(err);

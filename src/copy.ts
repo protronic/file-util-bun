@@ -34,7 +34,6 @@ export async function copy(source: string, destination: string){
   let isDirSource = (await stat(source)).isDirectory();
   if(isDirSource) {
     let isDirDestination = (await (stat(destination).catch(() => ({isDirectory: () => false})))).isDirectory();
-    // source = source.slice(-1)[0] == '/' ? source : (source + '/');
     if(!isDirDestination){
       throw new NotADirectoryError(`"${destination}" is not a directory, but "${source}" is.`);
     }
