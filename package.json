@@ -8,7 +8,8 @@
         "scpx": "dist/scpx.js",
         "rmx": "dist/rmx.js",
         "mkdirx": "dist/mkdirx.js",
-        "touchx": "dist/touchx.js"
+        "touchx": "dist/touchx.js",
+        "catx": "dist/catx.js"
     },
     "scripts": {
         "postinstall": "bun run build",
@@ -16,28 +17,38 @@
         "build_exe:cp": "bun build ./src/cpx.ts --outfile dist/cpx --compile",
         "build_exe_linux:cp": "bun build ./src/cpx.ts --target=bun-linux-x64 --outfile dist/cpx --compile",
         "build_node:cp": "bun build --outdir dist --target node src/cpx.ts",
+
         "build:scp": "bun build --outdir dist --target bun src/scpx.ts",
         "build_exe:scp": "bun build ./src/scpx.ts --outfile dist/scpx --compile",
         "build_exe_linux:scp": "bun build ./src/scpx.ts --target=bun-linux-x64 --outfile dist/scpx --compile",
         "build_node:scp": "echo 'scpx is not supported to be build with node as target.'",
+
         "build:rm": "bun build --outdir dist --target bun src/rmx.ts",
         "build_exe:rm": "bun build ./src/rmx.ts --outfile dist/rmx --compile",
         "build_exe_linux:rm": "bun build ./src/rmx.ts --target=bun-linux-x64 --outfile dist/rmx --compile",
         "build_node:rm": "bun build --outdir dist --target node src/rmx.ts",
+
         "build:mkdir": "bun build --outdir dist --target bun src/mkdirx.ts",
         "build_exe:mkdir": "bun build ./src/mkdirx.ts --outfile dist/mkdirx --compile",
         "build_exe_linux:mkdir": "bun build ./src/mkdirx.ts --target=bun-linux-x64 --outfile dist/mkdirx --compile",
         "build_node:mkdir": "bun build --outdir dist --target node src/mkdirx.ts",
+
+        "build:cat": "bun build --outdir dist --target bun src/catx.ts",
+        "build_exe:cat": "bun build ./src/catx.ts --outfile dist/catx --compile",
+        "build_exe_linux:cat": "bun build ./src/catx.ts --target=bun-linux-x64 --outfile dist/catx --compile",
+        "build_node:cat": "bun build --outdir dist --target node src/catx.ts",
+
         "build:touch": "bun build --outdir dist --target bun src/touchx.ts",
         "build_exe:touch": "bun build ./src/touchx.ts --outfile dist/touchx --compile",
         "build_exe_linux:touch": "bun build ./src/touchx.ts --target=bun-linux-x64 --outfile dist/touchx --compile",
         "build_node:touch": "bun build --outdir dist --target node src/touchx.ts",
-        "build_exe": "bun run build_exe:cp; bun run build_exe:scp; bun run build_exe:rm; bun run build_exe:mkdir; bun run build_exe:touch",
-        "build_exe_linux": "bun run build_exe_linux:cp; bun run build_exe_linux:scp; bun run build_exe_linux:rm; bun run build_exe_linux:mkdir; bun run build_exe_linux:touch",
-        "build_node": "bun build --outdir dist --target node src/cpx.ts src/rmx.ts src/mkdirx.ts src/touchx.ts; bun run build_node:scp",
-        "build": "bun build --outdir dist --target bun src/cpx.ts src/scpx.ts src/rmx.ts src/mkdirx.ts src/touchx.ts",
+        "build_exe": "bun run build_exe:cp; bun run build_exe:scp; bun run build_exe:rm; bun run build_exe:mkdir; bun run build_exe:touch; bun run build_exe:cat",
+
+        "build_exe_linux": "bun run build_exe_linux:cp; bun run build_exe_linux:scp; bun run build_exe_linux:rm; bun run build_exe_linux:mkdir; bun run build_exe_linux:touch; bun run build_exe_linux:cat",
+        "build_node": "bun build --outdir dist --target node src/cpx.ts src/rmx.ts src/mkdirx.ts src/touchx.ts src/catx.ts; bun run build_node:scp",
+        "build": "bun build --outdir dist --target bun src/cpx.ts src/scpx.ts src/rmx.ts src/mkdirx.ts src/touchx.ts src/catx.ts",
         "build_all": "bun run build_exe; bun run build_exe_linux; bun run build",
-        "watch": "bun build --outdir dist --target bun src/cpx.ts src/scpx.ts src/rmx.ts --watch"
+        "watch": "bun build --outdir dist --target bun src/cpx.ts src/scpx.ts src/rmx.ts src/mkdirx.ts src/touchx.ts src/catx.ts --watch"
     },
     "devDependencies": {
         "@types/bun": "latest",
