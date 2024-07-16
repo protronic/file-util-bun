@@ -2,7 +2,7 @@
     "name": "file-util-bun",
     "module": "index.ts",
     "type": "module",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "bin": {
         "cpx": "dist/cpx.js",
         "scpx": "dist/scpx.js",
