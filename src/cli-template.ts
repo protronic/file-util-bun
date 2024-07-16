@@ -27,3 +27,16 @@ export function handleDefaultArgs(args: Arguments, helpMessage: string){
   }
 }
 
+export async function readPipeInput(){
+  let stdin = Bun.stdin.writer();
+  // this is necessary, when there is no pipe input. Otherwise the program would wait for input indefinatly. 
+  stdin.end();
+  let pipeInput = "";
+  try {
+    for await (const chunk of process.stdin) pipeInput += (chunk); 
+  } catch (err) {
+    // If there is no input, ignore error;
+  }
+  return pipeInput;
+}
+

@@ -10,7 +10,8 @@
         "rmx": "dist/rmx.js",
         "mkdirx": "dist/mkdirx.js",
         "touchx": "dist/touchx.js",
-        "catx": "dist/catx.js"
+        "catx": "dist/catx.js",
+        "echox": "dist/echox.js"
     },
     "scripts": {
         "build:cp": "bun build --outdir dist --target bun src/cpx.ts",
@@ -33,18 +34,25 @@
         "build_exe:cat": "bun build ./src/catx.ts --outfile dist/bin/catx --compile",
         "build_exe_linux:cat": "bun build ./src/catx.ts --target=bun-linux-x64 --outfile dist/bin/catx --compile",
         "build_node:cat": "bun build --outdir dist --target node src/catx.ts",
+
         "build:touch": "bun build --outdir dist --target bun src/touchx.ts",
         "build_exe:touch": "bun build ./src/touchx.ts --outfile dist/bin/touchx --compile",
         "build_exe_linux:touch": "bun build ./src/touchx.ts --target=bun-linux-x64 --outfile dist/bin/touchx --compile",
         "build_node:touch": "bun build --outdir dist --target node src/touchx.ts",
+
+        "build:echo": "bun build --outdir dist --target bun src/echox.ts",
+        "build_exe:echo": "bun build ./src/echox.ts --outfile dist/bin/echox --compile",
+        "build_exe_linux:echo": "bun build ./src/echox.ts --target=bun-linux-x64 --outfile dist/bin/echox --compile",
+        "build_node:echo": "bun build --outdir dist --target node src/echox.ts",
+
         "build:exports": "bun build --outdir dist --target bun src/index.ts",
-        "build_exe": "bun run build_exe:cp; bun run build_exe:scp; bun run build_exe:rm; bun run build_exe:mkdir; bun run build_exe:touch; bun run build_exe:cat",
-        "build_exe_linux": "bun run build_exe_linux:cp; bun run build_exe_linux:scp; bun run build_exe_linux:rm; bun run build_exe_linux:mkdir; bun run build_exe_linux:touch; bun run build_exe_linux:cat",
-        "build_node": "bun build --outdir dist --target node src/cpx.ts src/rmx.ts src/mkdirx.ts src/touchx.ts src/catx.ts; bun run build_node:scp",
-        "build": "bun build --outdir dist --target bun src/index.ts src/cpx.ts src/scpx.ts src/rmx.ts src/mkdirx.ts src/touchx.ts src/catx.ts",
+        "build_exe": "bun run build_exe:cp; bun run build_exe:scp; bun run build_exe:rm; bun run build_exe:mkdir; bun run build_exe:touch; bun run build_exe:cat; bun run build_exe:echo",
+        "build_exe_linux": "bun run build_exe_linux:cp; bun run build_exe_linux:scp; bun run build_exe_linux:rm; bun run build_exe_linux:mkdir; bun run build_exe_linux:touch; bun run build_exe_linux:cat; bun run build_exe_linux:echo",
+        "build_node": "bun build --outdir dist --target node src/cpx.ts src/rmx.ts src/mkdirx.ts src/touchx.ts src/catx.ts src/echox.ts; bun run build_node:scp",
+        "build": "bun build --outdir dist --target bun src/index.ts src/cpx.ts src/scpx.ts src/rmx.ts src/mkdirx.ts src/touchx.ts src/catx.ts src/echox.ts",
         "build_all": "bun run build_exe; bun run build_exe_linux; bun run build",
-        "watch": "bun build --outdir dist --target bun src/cpx.ts src/scpx.ts src/rmx.ts src/mkdirx.ts src/touchx.ts src/catx.ts --watch",
-        "patch": "npm run build; git add *; git commit; git push; npm version patch; git push --tags;"
+        "watch": "bun build --outdir dist --target bun src/cpx.ts src/scpx.ts src/rmx.ts src/mkdirx.ts src/touchx.ts src/catx.ts src/echox.ts --watch",
+        "patch": "npm run build; git add *; git commit; git push; npm version patch; git push --tags; npm publish;"
     },
     "devDependencies": {
         "@types/bun": "latest",

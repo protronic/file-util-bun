@@ -28,6 +28,7 @@ The following executables are available from within the package.json (if you wan
 * `mkdirx` - creates empty folders
 * `touchx` - creates new files or fills new files with piped input
 * `catx` - prints the content of a file
+* `echox` - prints the arguments or piped input back to screen
 * `scpx` - (disfunctional) copies files and folders to/from remote locations
 
 additionally all the major functions, that the executables rely on, are exposed in the main module file (index.ts)(function names are the same as above, but without the 'x' at the end). So if you want to import the cp method and use it inside your code:
