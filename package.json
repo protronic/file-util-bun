@@ -3,7 +3,7 @@
     "module": "index.ts",
     "main": "index.ts",
     "type": "module",
-    "version": "0.0.4",
+    "version": "0.0.5",
     "bin": {
         "cpx": "dist/cpx.js",
         "scpx": "dist/scpx.js",
