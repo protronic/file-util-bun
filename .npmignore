@@ -3,3 +3,4 @@ testOut
 !dist
 dist/bin
 node_modules
+bun.lockb
