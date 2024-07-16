@@ -2,7 +2,7 @@
     "name": "file-util",
     "module": "index.ts",
     "type": "module",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "bin": {
         "cpx": "dist/cpx.js",
         "scpx": "dist/scpx.js",
@@ -52,5 +52,8 @@
         "read": "^3.0.1",
         "ssh2-sftp-client": "^10.0.3"
     },
-    "trustedDependencies": ["ssh2-sftp-client", "ssh2"]
+    "trustedDependencies": [
+        "ssh2-sftp-client",
+        "ssh2"
+    ]
 }
