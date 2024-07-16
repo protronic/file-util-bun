@@ -1,4 +1,4 @@
-import { rm, rmdir, stat } from "node:fs/promises";
+import { rm } from "node:fs/promises";
 
 export async function remove(target: string, recursive: boolean) {
   try {
