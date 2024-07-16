@@ -1,5 +1,20 @@
 {
     "name": "file-util-bun",
+    "description": "A collection of cli tools written in Typescript based on Bun. It is meant to be used in package.json scripts for simple deployment and maintenance tasks independent of OS.",
+    "homepage": "https://github.com/protronic/file-util-bun",
+    "bugs": {
+        "url": "https://github.com/protronic/file-util-bun/issues",
+        "email": "r.seidler@protronic-gmbh.de"
+    },
+    "license": "ISC",
+    "author": {
+        "name": "Robert Seidler",
+        "email": "r.seidler@protronic-gmbh.de"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/protronic/file-util-bun.git"
+    },
     "module": "index.ts",
     "main": "dist/index.js",
     "type": "module",
@@ -51,6 +66,14 @@
         "watch": "bun build --outdir dist --target bun src/cpx.ts src/scpx.ts src/rmx.ts src/mkdirx.ts src/touchx.ts src/catx.ts src/echox.ts --watch",
         "patch": "npm run build; git add *; git commit; git push; npm version patch; git push --tags; npm publish;"
     },
+    "keywords": [
+        "bun",
+        "cli",
+        "typescript",
+        "linux",
+        "windows",
+        "script"
+    ],
     "devDependencies": {
         "@types/bun": "latest",
         "bun": "^1.1.18"
