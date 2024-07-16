@@ -30,7 +30,7 @@ The following executables are available from within the package.json (if you wan
 * `catx` - prints the content of a file
 * `scpx` - (disfunctional) copies files and folders to/from remote locations
 
-additionally all the major functions, that the executables rely on, are exposed in the main module file (index.ts). So you are for example able to import the cp method, for use inside your code (function names are the same, but without the 'x' at the end):
+additionally all the major functions, that the executables rely on, are exposed in the main module file (index.ts)(function names are the same as above, but without the 'x' at the end). So if you want to import the cp method and use it inside your code:
 
 ```javascript
 import { cp } from "file-util-bun";
