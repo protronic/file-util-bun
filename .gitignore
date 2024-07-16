@@ -119,6 +119,8 @@ out
 
 .nuxt
 dist
+# dist/bin
+# dist/*.node
 
 # Gatsby files
 
