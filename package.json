@@ -1,6 +1,7 @@
 {
     "name": "file-util-bun",
     "module": "index.ts",
+    "main": "index.ts",
     "type": "module",
     "version": "0.0.4",
     "bin": {
@@ -41,7 +42,8 @@
         "build_node": "bun build --outdir dist --target node src/cpx.ts src/rmx.ts src/mkdirx.ts src/touchx.ts src/catx.ts; bun run build_node:scp",
         "build": "bun build --outdir dist --target bun src/cpx.ts src/scpx.ts src/rmx.ts src/mkdirx.ts src/touchx.ts src/catx.ts",
         "build_all": "bun run build_exe; bun run build_exe_linux; bun run build",
-        "watch": "bun build --outdir dist --target bun src/cpx.ts src/scpx.ts src/rmx.ts src/mkdirx.ts src/touchx.ts src/catx.ts --watch"
+        "watch": "bun build --outdir dist --target bun src/cpx.ts src/scpx.ts src/rmx.ts src/mkdirx.ts src/touchx.ts src/catx.ts --watch",
+        "patch": "npm run build; git add *; git commit; git push; npm version patch; git push --tags;"
     },
     "devDependencies": {
         "@types/bun": "latest",
