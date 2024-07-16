@@ -1,0 +1,5 @@
+testIn
+testOut
+!dist
+dist/bin
+node_modules

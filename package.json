@@ -1,5 +1,5 @@
 {
-    "name": "file-util",
+    "name": "file-util-bun",
     "module": "index.ts",
     "type": "module",
     "version": "0.0.3",
