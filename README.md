@@ -40,8 +40,8 @@ cp("./test_file_1", "./test/test_file_1");
 
 __scp is not functional yet. Bun doesn't support the required ssh2 package at the moment and I haven't found a satisfying solution.__
 
-all applications support at least these commandline arguments:
-`-h` | `-help` - to show a help message, explaining usage
+all applications support at least these commandline arguments:  
+`-h` | `-help` - to show a help message, explaining usage  
 `-v` | `-version` - to show the version and build information
 
 # development
