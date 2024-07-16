@@ -21,7 +21,7 @@ the package should work with both node and bun.
 
 # usage
 
-The following executables are available from within the package.json (if you want to use them in your terminal directly, you might have to install the package with global flag):
+The following executables are available from within the package.json (if you want to use them in your terminal directly, you might have to install the package with global flag or run it via `npx --package file-util-bun touchx test.txt`):
 
 * `cpx` - copies files and folders
 * `rmx` - removes files and folders
