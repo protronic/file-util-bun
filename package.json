@@ -18,7 +18,7 @@
     "module": "index.ts",
     "main": "dist/index.js",
     "type": "module",
-    "version": "0.0.8",
+    "version": "0.0.9",
     "bin": {
         "cpx": "dist/cpx.js",
         "scpx": "dist/scpx.js",
