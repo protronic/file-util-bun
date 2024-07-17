@@ -64,7 +64,7 @@
         "build": "bun build --outdir dist --target bun src/index.ts src/cpx.ts src/scpx.ts src/rmx.ts src/mkdirx.ts src/touchx.ts src/catx.ts src/echox.ts",
         "build_all": "bun run build_exe; bun run build_exe_linux; bun run build",
         "watch": "bun build --outdir dist --target bun src/cpx.ts src/scpx.ts src/rmx.ts src/mkdirx.ts src/touchx.ts src/catx.ts src/echox.ts --watch",
-        "patch": "npm run build; git add *; git commit; git push; npm version patch; git push --tags; npm publish;"
+        "patch": "git add *; git commit; git push; npm version patch; git push --tags; npm run build;"
     },
     "keywords": [
         "bun",
